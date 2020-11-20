@@ -1,3 +1,5 @@
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
 import "./App.sass";
 import Profile from "./components/Profile";
 import AppNav from "./components/AppNav";
@@ -5,7 +7,6 @@ import Home from "./components/Home";
 import MapPage from "./components/MapPage";
 import About from "./components/About";
 import Footer from "./components/Footer";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 function App() {
   return (
