@@ -1,0 +1,49 @@
+.locate {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+.locate img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.search {
+  position: absolute;
+  top: 0rem;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 30vw;
+  max-width: 400px;
+  z-index: 10;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.788);
+  border-radius: 3px;
+}
+
+.search input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.markerImg {
+  height: 200px;
+  width: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+  .search {
+    width: 30%;
+    left: 65%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .search {
+    width: 30%;
+    left: 70%;
+  }
+}

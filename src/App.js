@@ -1,4 +1,9 @@
+import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
+import { Provider } from "react-redux";
+
+import store from "./store";
 
 import "./App.sass";
 import Profile from "./components/Profile";
@@ -11,23 +16,25 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <AppNav></AppNav>
+      <Provider store={store}>
+        <Router>
+          <AppNav></AppNav>
 
-        <div className="page-container">
-          <Switch>
-            <Route path={"/"} exact component={Home} />
+          <div className="page-container">
+            <Switch>
+              <Route path={"/"} exact component={Home} />
 
-            <Route path={"/map"} component={MapPage} />
+              <Route path={"/map"} component={MapPage} />
 
-            <Route path={"/profile"} component={Profile} />
+              <Route path={"/profile"} component={Profile} />
 
-            <Route path={"/about"} component={About} />
-          </Switch>
-        </div>
+              <Route path={"/about"} component={About} />
+            </Switch>
+          </div>
 
-        <Footer className="footer"></Footer>
-      </Router>
+          <Footer className="footer"></Footer>
+        </Router>
+      </Provider>
     </div>
   );
 }
