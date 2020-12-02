@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
 import store from "./store";
 
-import "./App.sass";
+import "./App.scss";
 import Profile from "./components/Profile";
 import AppNav from "./components/AppNav";
 import Home from "./components/Home";

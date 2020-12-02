@@ -26,6 +26,7 @@ import mapStyles from "../css/Map.js";
 import compassLogo from "../media/compass.svg";
 import vanLogo from "../media/van-3.png";
 import "../css/Map.scss";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const libraries = ["places"];
 
@@ -47,6 +48,7 @@ const center = {
 };
 
 function Map(props) {
+  const { isAuthenticated, user } = useAuth0();
   // isLoaded = is map loaded, loadError = was there an error when loading map
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
@@ -83,6 +85,12 @@ function Map(props) {
 
   // Use state to create new marker
   const saveMarker = () => {
+    if (!isAuthenticated) {
+      alert("Log in to see and create spots! :)");
+      return;
+    }
+    console.log(user);
+
     const newMarker = {
       lat: newMarkerCoordinates.lat,
       lng: newMarkerCoordinates.lng,
@@ -144,10 +152,9 @@ function Map(props) {
 
         {/* Send selectedItem to Markers component to open info window if existing marker is clicked.
                     Send setSelectedItem to Markers component so it can be used from there  */}
-        <Markers
-          selectedItem={selected}
-          setSelectedItem={setSelectedItem}
-        ></Markers>
+        {isAuthenticated && (
+          <Markers selectedItem={selected} setSelectedItem={setSelectedItem} />
+        )}
 
         {/* If map is clicked and coordinates is saved to newMarkerCoordinates, the new marker and info window pops up here */}
         {newMarkerCoordinates ? (
