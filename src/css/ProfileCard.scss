@@ -1,0 +1,23 @@
+.profile-card-container {
+  background-color: rgba(90, 90, 89, 0.454);
+  position: absolute;
+  top: 5em;
+  right: 3px;
+  padding: 10px;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(152, 152, 152);
+  img {
+    border-radius: 50%;
+    height: 200px;
+  }
+  h2 {
+    padding: 10px;
+  }
+  p {
+    padding: 8px;
+  }
+}

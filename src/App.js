@@ -2,7 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import { Provider } from "react-redux";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import store from "./store";
 
 import "./App.sass";
@@ -14,6 +14,9 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 
 function App() {
+  // If sign in is loading, "loading..." is displayed in browser
+  const { isLoading } = useAuth0();
+  //if (isLoading) return <div>loading...</div>;
   return (
     <div className="App">
       <Provider store={store}>
