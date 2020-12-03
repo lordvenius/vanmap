@@ -5,6 +5,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import ProfileCard from "./ProfileCard";
 import LogIn from "./Login";
 import pic from "../media/guest.png";
+import { Dropdown, DropdownButton } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function AppNav() {
   const [userStyle, setUserStyle] = useState("hidden");
@@ -18,7 +20,28 @@ function AppNav() {
     }
   };
   return (
-    <div className="container">
+    <div className="containerr">
+      <DropdownButton
+        id="dropdown-item-button"
+        title="Menu"
+        className="dropdown"
+      >
+        <Dropdown.Item as="button">
+          <Link to="/">
+            <p>Home</p>
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item as="button">
+          <Link to="/map">
+            <p>Map</p>
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item as="button">
+          <Link to="/about">
+            <p>About</p>
+          </Link>
+        </Dropdown.Item>
+      </DropdownButton>
       <ul className="nav-ul">
         <li>
           <Link to="/">

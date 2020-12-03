@@ -22,7 +22,10 @@
 
 .jumbotron {
   width: 100%;
-  height: 160vh;
+  height: auto;
+  margin-bottom: 0;
+  border-radius: 0;
+
   background-image: linear-gradient(
     rgb(10, 10, 10),
     rgb(10, 10, 10),
@@ -33,16 +36,18 @@
   );
 
   .top {
-    height: 90vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
     .home-logo {
-      height: 100%;
+      height: auto;
       width: 50%;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       animation: 1s ease-out 0s 1 slideInFromLeft;
       img {
@@ -51,22 +56,23 @@
       h1 {
         color: rgb(211, 211, 211);
         text-shadow: 4px 4px 2px black;
-        font-size: 100px;
-        margin-top: -100px;
+        font-size: 8vw;
+        margin-top: -90px;
       }
     }
     .home-text {
       display: flex;
+
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+
       width: 50%;
-      height: 100%;
+      height: auto;
       animation: 1s ease-out 0s 1 slideInFromRight;
       p {
         color: rgb(165, 165, 165);
         text-shadow: 1px 1px 2px rgb(44, 44, 44);
-        font-size: 20px;
+        font-size: 2vw;
         margin-bottom: 30px;
       }
     }
@@ -167,4 +173,94 @@
   opacity: 1;
   transform: none;
   visibility: visible;
+}
+
+@media only screen and (max-width: 1280px) {
+  .jumbotron {
+    .top {
+      .home-logo {
+        img,
+        h1 {
+          margin-top: -50px;
+        }
+      }
+      .home-text {
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .top {
+    max-height: 50vh;
+    .home-logo,
+    .home-text {
+      margin-top: -200px;
+    }
+  }
+}
+
+@media only screen and (max-width: 714px) {
+  .jumbotron {
+    .top {
+      flex-direction: column;
+      justify-content: start;
+      .home-logo {
+        margin-bottom: 50px;
+        margin-top: 0;
+        height: 40vh;
+        width: 100vw;
+        img {
+          width: 60vw;
+          margin-top: 0;
+        }
+        h1 {
+          margin-top: -60px;
+          font-size: 10vw;
+        }
+      }
+      .home-text {
+        margin-top: 0;
+        height: 40vh;
+        width: 100vw;
+        text-align: center;
+        p {
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+
+  .jumbotron {
+    height: auto;
+    .bottom {
+      flex-direction: column;
+      align-items: center;
+      height: 90vh;
+      h1 {
+      }
+      .featured-card {
+        width: 100vw;
+        margin-top: o;
+      }
+      .card-container {
+        width: 100vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .jumbotron {
+    .top {
+      .home-logo {
+        h1 {
+          margin-top: -30px;
+        }
+      }
+      .home-text {
+        margin-top: -100px;
+      }
+    }
+  }
 }

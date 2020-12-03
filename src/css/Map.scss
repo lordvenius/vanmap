@@ -44,6 +44,16 @@
 @media screen and (max-width: 750px) {
   .search {
     width: 30%;
+    left: 60%;
+  }
+}
+
+@media only screen and (max-width: 514px) and (min-width: 300px) {
+  .locate {
+    top: 4rem;
+    right: 1rem;
+  }
+  .search {
     left: 70%;
   }
 }

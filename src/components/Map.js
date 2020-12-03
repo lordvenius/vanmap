@@ -31,7 +31,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const libraries = ["places"];
 
 const mapContainerStyle = {
-  height: "80vh",
+  height: "90vh",
   width: "100%",
 };
 
