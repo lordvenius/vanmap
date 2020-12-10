@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=15.0.0"
+    "node": "15.x"
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.0.0",
