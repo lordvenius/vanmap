@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const cors = require("cors")
-require("dotenv").config()
+const cors = require("cors");
+require("dotenv").config();
 
-const items = require("./routes/api/Items")
+const items = require("./routes/api/items");
 
 const app = express();
 
@@ -13,22 +13,19 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// DB Config 
+// DB Config
 
 const db = require("./config/Keys").mongouri;
 
 // Connect to Mongo
 
 mongoose
-    .connect(db)
-    .then(() => console.log("mongoDB Connected"))
-    .catch(err => console.log(err));
+  .connect(db)
+  .then(() => console.log("mongoDB Connected"))
+  .catch((err) => console.log(err));
 
 // use routes
 app.use("/api/items", items);
-
-
-
 
 const port = process.env.port || 5000;
 
