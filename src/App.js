@@ -9,7 +9,7 @@ import "./App.scss";
 import Profile from "./components/Profile";
 import AppNav from "./components/AppNav";
 import Home from "./components/Home";
-import MapPage from "./components/MapPage.js";
+import MapPage from "./components/mapPage";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
